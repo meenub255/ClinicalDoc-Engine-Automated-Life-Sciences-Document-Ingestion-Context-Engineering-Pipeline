@@ -1,4 +1,4 @@
-# Clinical DOC Engine
+# ClinicalDoc-Engine: Automated Life Sciences Document Ingestion & Context Engineering Pipeline
 
 PDF protocols from ClinicalTrials.gov → structured Parquet → metadata-filtered LangChain retrieval.
 
