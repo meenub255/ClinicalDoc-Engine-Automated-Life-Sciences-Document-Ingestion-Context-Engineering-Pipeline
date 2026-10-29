@@ -6,3 +6,6 @@ requests
 langchain-core
 langchain-text-splitters
 langchain-openai
+
+streamlit
+playwright

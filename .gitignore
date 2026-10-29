@@ -5,3 +5,4 @@ data/parsed/
 data/processed/
 spark-warehouse/
 .env
+

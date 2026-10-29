@@ -2,6 +2,72 @@
 
 PDF protocols from ClinicalTrials.gov → structured Parquet → metadata-filtered LangChain retrieval.
 
+## Architecture
+
+```mermaid
+flowchart LR
+    A[ClinicalTrials.gov API v2] -->|download_docs.py| B[(data/raw: PDFs + manifest.json)]
+    B -->|parse_pdfs.py<br/>pdfplumber| C[(data/parsed: text + table-as-Markdown JSONL)]
+    C -->|clean_spark.py<br/>PySpark: regex clean, UDF metadata| D[(Parquet: elements + documents)]
+    D -->|rag.py: table-atomic chunking<br/>+ context header + metadata| E[(LangChain vector store)]
+    E --> F{SecureRetriever}
+    G[User role + phase/drug/area filters] --> F
+    F -->|only permitted chunks| H[Streamlit UI / demo_query.py]
+```
+
+### Metadata extraction (per document)
+
+```mermaid
+flowchart TD
+    T[Cleaned head pages + full text] --> P{Phase regex hit?}
+    P -- yes --> P1[phase from text]
+    P -- no --> P2[phase from registry]
+    T --> S{Sponsor: line found?}
+    S -- yes --> S1[sponsor from text]
+    S -- no --> S2[sponsor from registry]
+    T --> D{Registry drug name appears in text?}
+    D -- yes --> D1[most frequent one]
+    D -- no --> D2[drug-suffix frequency, else registry]
+    T --> A[Therapeutic area: keyword lexicon score]
+    P1 & P2 & S1 & S2 & D1 & D2 & A --> M[drug, phase, area, sponsor, access_level + *_src provenance]
+```
+
+### Query-time enforcement
+
+```mermaid
+flowchart TD
+    Q[Query + role + filters] --> R{Role known?}
+    R -- no --> X[PermissionError]
+    R -- yes --> L[Allowed access levels for role]
+    L --> F[Predicate = access AND phase AND drug AND area AND kind]
+    F --> V[Vector search only over chunks passing predicate]
+    V --> OUT[Top-k chunks]
+```
+
+## Demo UI
+
+Run `streamlit run src/app.py` (regenerate images with `python scripts/make_screenshots.py`).
+
+**1. Public user, no filters** – only `public` documents are visible; restricted/internal chunks are blocked.
+
+![Public user view](docs/img/ui_public.png)
+
+**2. Admin, Phase II + Oncology + tables only** – the counters show how far the filters narrow the index.
+
+![Admin filtered view](docs/img/ui_admin_filtered.png)
+
+| # | UI element | What it does |
+|---|---|---|
+| 1 | Role selector | Sets the mandatory access filter (`public_user`, `employee`, `admin`); cannot be bypassed by the query |
+| 2 | Phase / Therapeutic area / Drug | Optional metadata filters AND-ed with the role filter |
+| 3 | Content type | Restrict to prose or to tables |
+| 4 | Question box | Free-text semantic query |
+| 5 | Counters | Chunks indexed vs visible vs blocked – shows the filter is enforced before ranking |
+| 6 | Badges | Drug · phase · area · access level · source doc/page of each hit |
+| 7 | Result card | Chunk text; tables render as real tables |
+
+## Pipeline commands
+
 ```
 python src/download_docs.py --n 8          # 1. fetch public protocol PDFs + registry metadata (data/raw)
 python src/parse_pdfs.py                   # 2. pdfplumber: prose + tables-as-Markdown (data/parsed)
