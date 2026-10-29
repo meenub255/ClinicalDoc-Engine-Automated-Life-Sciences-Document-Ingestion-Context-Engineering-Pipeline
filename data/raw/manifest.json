@@ -1,0 +1,141 @@
+[
+  {
+    "nct_id": "NCT01434602",
+    "file": "NCT01434602.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/02/NCT01434602/Prot_SAP_000.pdf",
+    "registry_title": "Phase I-II Everolimus and Sorafenib in Recurrent High-Grade Gliomas",
+    "registry_sponsor": "National Cancer Institute (NCI)",
+    "registry_phase": [
+      "PHASE1",
+      "PHASE2"
+    ],
+    "registry_conditions": [
+      "Brain Tumor",
+      "Glioblastoma",
+      "Anaplastic Glioma"
+    ],
+    "registry_interventions": [
+      "everolimus",
+      "sorafenib"
+    ]
+  },
+  {
+    "nct_id": "NCT04449029",
+    "file": "NCT04449029.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/29/NCT04449029/Prot_000.pdf",
+    "registry_title": "A Study of GSK3228836 in Participants With Chronic Hepatitis B (CHB)",
+    "registry_sponsor": "GlaxoSmithKline",
+    "registry_phase": [
+      "PHASE2"
+    ],
+    "registry_conditions": [
+      "Hepatitis B"
+    ],
+    "registry_interventions": [
+      "GSK3228836",
+      "Placebo",
+      "Nucleos(t)ide therapy"
+    ]
+  },
+  {
+    "nct_id": "NCT04286607",
+    "file": "NCT04286607.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/07/NCT04286607/Prot_000.pdf",
+    "registry_title": "Open-Label Extension Trial of PDE4 Inhibition With Roflumilast for the Management of Plaque Psoriasis",
+    "registry_sponsor": "Arcutis Biotherapeutics, Inc.",
+    "registry_phase": [
+      "PHASE3"
+    ],
+    "registry_conditions": [
+      "Chronic Plaque Psoriasis"
+    ],
+    "registry_interventions": [
+      "Topical roflumilast"
+    ]
+  },
+  {
+    "nct_id": "NCT03065075",
+    "file": "NCT03065075.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/75/NCT03065075/Prot_SAP_000.pdf",
+    "registry_title": "Effect of Phenazopyridine on Prolapse Surgery Voiding Trials",
+    "registry_sponsor": "University of Massachusetts, Worcester",
+    "registry_phase": [
+      "PHASE3"
+    ],
+    "registry_conditions": [
+      "Urinary Retention Postoperative"
+    ],
+    "registry_interventions": [
+      "Phenazopyridine"
+    ]
+  },
+  {
+    "nct_id": "NCT03576001",
+    "file": "NCT03576001.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/01/NCT03576001/Prot_000.pdf",
+    "registry_title": "Multimodality Intervention for Function and Metabolism in SCI",
+    "registry_sponsor": "Brigham and Women's Hospital",
+    "registry_phase": [
+      "PHASE2"
+    ],
+    "registry_conditions": [
+      "Spinal Cord Injuries"
+    ],
+    "registry_interventions": [
+      "Testosterone Undecanoate"
+    ]
+  },
+  {
+    "nct_id": "NCT04721912",
+    "file": "NCT04721912.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/12/NCT04721912/Prot_SAP_000.pdf",
+    "registry_title": "Group B Streptococcus Response After Probiotic Exposure",
+    "registry_sponsor": "University of New Mexico",
+    "registry_phase": [
+      "PHASE3"
+    ],
+    "registry_conditions": [
+      "Group B Strep Infection"
+    ],
+    "registry_interventions": [
+      "Probiotic dietary supplement"
+    ]
+  },
+  {
+    "nct_id": "NCT05058677",
+    "file": "NCT05058677.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/77/NCT05058677/Prot_SAP_000.pdf",
+    "registry_title": "Aerosolized Endotracheal Lidocaine to Avoid Intracranial Pressure Spikes in Patients With Severe Traumatic Brain Injury",
+    "registry_sponsor": "The University of Texas Health Science Center, Houston",
+    "registry_phase": [
+      "PHASE4"
+    ],
+    "registry_conditions": [
+      "Traumatic Brain Injury"
+    ],
+    "registry_interventions": [
+      "aerosolized 2% lidocaine (20mg/ml)",
+      "instilled 0.9% sodium chloride (NS)",
+      "instilled 2% lidocaine solution"
+    ]
+  },
+  {
+    "nct_id": "NCT02951819",
+    "file": "NCT02951819.pdf",
+    "source_url": "https://clinicaltrials.gov/ProvidedDocs/19/NCT02951819/Prot_000.pdf",
+    "registry_title": "A Study to Evaluate Dara-CyBorD in Previously Untreated and Relapsed Subjects With Multiple Myeloma",
+    "registry_sponsor": "Janssen Scientific Affairs, LLC",
+    "registry_phase": [
+      "PHASE2"
+    ],
+    "registry_conditions": [
+      "Multiple Myeloma"
+    ],
+    "registry_interventions": [
+      "Daratumumab",
+      "Cyclophosphamide",
+      "Bortezomib",
+      "Dexamethasone"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+pdfplumber
+pyspark==3.5.0
+pandas
+pyarrow
+requests
+langchain-core
+langchain-text-splitters
+langchain-openai
